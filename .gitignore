@@ -7,7 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+.project
 .DS_Store
+.idea
 .secret
 
 # Ignore the default SQLite database.
