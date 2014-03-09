@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Jraff::Application.config.secret_key_base = 'bfa17693eb77f9b9a334a6b56c05299e07a4c6183f6dee36071f89b97297ca87d4d6ef19e37a8a2171901725a65120a27fde32651276ff01351ab3d2ce8a3bf4'
+
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Jraff::Application.config.secret_key_base = secure_token
