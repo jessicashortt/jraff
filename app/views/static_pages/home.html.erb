@@ -1,6 +1,15 @@
-<% provide(:title, 'Home') %>
 
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Welcome.</h1>
+
+  <%= form_for(:session, url: sessions_path) do |f| %>
+
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+  <% end %>
 
 <%= link_to "Sign up now!", signup_path, class: "signup-button" %>

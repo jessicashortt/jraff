@@ -1,18 +1,15 @@
 Jraff::Application.routes.draw do
+  # The priority is based upon order of creation: first created -> highest priority.
+  resources :users
+  resources :posts
+  resources :sessions, only: [:new, :create, :destroy]
+
   root "static_pages#home"
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-
-  resources :users
-  resources :posts
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
