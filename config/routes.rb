@@ -9,6 +9,7 @@ Jraff::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/edit',    to: 'users#edit',           via: 'get'
 
 
   # Example of regular route:
@@ -17,4 +18,6 @@ Jraff::Application.routes.draw do
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
+
+  # Vanity URLs. Make sure at the bottom of this file.
 end
