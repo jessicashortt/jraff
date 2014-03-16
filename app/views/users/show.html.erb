@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="user-profile">
+  <div class="user-info">
+    <p id="notice"><%= notice %></p>
+    <div class="image"></div>
+    <h2><%= @user.full_name %></h2>
+    <h3 class="user-info-username">@<%= @user.username %></h3>
+    <!-- put actual description info here later -->
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <p class="location"><strong>Halifax, Nova Scotia, Canada</strong></p>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
 
-<p>
-  <strong>Full name:</strong>
-  <%= @user.full_name %>
-</p>
+  <div class="user-posts">
+      <% if @user.posts.any? %>
+        <h3> posts (<%= @user.posts.count %>)</h3>
+        <ul class="posts">
+          <%= render @posts %>
+        </ul>
+      <% else %>
+        <p> Someone's sleepy! Why don't you make a first post!</p>
+      <% end %>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

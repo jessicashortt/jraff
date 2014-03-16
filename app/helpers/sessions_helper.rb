@@ -11,6 +11,14 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  # Before filters
+  def signed_in_user
+    unless signed_in?
+      store_location
+      redirect_to root_url, notice: "Please sign in."
+    end
+  end
+
   # Expressly used to handle assignment
   def current_user=(user)
     @current_user = user
@@ -35,7 +43,7 @@ module SessionsHelper
     session[:return_to] = request.url if request.get?
   end
 
-  #updates the users cookie (for stolen session) and then deletes it to sign the user out
+  # updates the users cookie (for stolen session) and then deletes it to sign the user out
   def sign_out
     current_user.update_attribute(:remember_token,
                                   User.hash(User.new_remember_token))

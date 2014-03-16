@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   before_save { self.username = username.downcase }
   before_create :create_remember_token
   has_secure_password
-  has_many :posts
+  has_many :posts, dependent: :destroy #arranges for dependent posts (belonging to a user) to be destroyed when the user is
 
   validates :name, presence: true, length: { maximum: 100 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
 
   def User.hash(token)
     Digest::SHA1.hexdigest(token.to_s)  #see if md5 works
+  end
+
+  def feed
+    Post.where("user_id = ?", id)
   end
 
   private

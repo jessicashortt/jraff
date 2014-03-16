@@ -1,7 +1,16 @@
+<% if signed_in? %>
+  <%= form_for(@post) do |f| %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Compose new post..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <% end %>
 
+  <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+<% else %>
 <h1>Welcome.</h1>
-
-  <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= form_for(:session, url: sessions_path) do |f| %>
 
     <%= f.label :username %>
     <%= f.text_field :username %>
@@ -12,4 +21,5 @@
     <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
   <% end %>
 
-<%= link_to "Sign up now!", signup_path, class: "signup-button" %>
+  <%= link_to "Sign up now!", signup_path, class: "signup-button" %>
+<%end%>

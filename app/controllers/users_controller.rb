@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts(params[:page])
   end
 
   # GET /users/new
@@ -76,14 +77,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :email, :full_name, :password, :password_confirmation)
-    end
-
-    # Before filters
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to root_url, notice: "Please sign in."
-      end
     end
 
     def correct_user
