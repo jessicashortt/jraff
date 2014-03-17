@@ -1,7 +1,7 @@
 Jraff::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   resources :users
-  resources :posts
+  resources :posts, only: [:create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
   root "static_pages#home"
