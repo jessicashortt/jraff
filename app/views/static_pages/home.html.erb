@@ -1,4 +1,7 @@
 <% if signed_in? %>
+<section>
+        <%= render 'shared/stats' %>
+      </section>
   <%= form_for(@post) do |f| %>
     <div class="field">
       <%= f.text_area :content, placeholder: "Compose new post..." %>

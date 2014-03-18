@@ -3,3 +3,8 @@
 This is a microblog web application created with Ruby on Rails. This is my first project working with RoR.
 
 I built it with Ruby 2.1.0, dependent gems are found in the Gemfile.
+
+
+
+Regrets: I didn't use RSpec with this project because I did a lot of it with McDonald's wifi, which hated downloading gems and the infamously hard to set up Nokogiri was not working with me. That's no excuse, and test driven development is important, which is why I'm ensuring I use it in the future, and am starting a project solely for learning to test as I develop.
+

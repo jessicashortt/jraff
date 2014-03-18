@@ -1,0 +1,31 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1><%= @user.full_name %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>posts:</b> <%= @user.posts.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @feed_items.try(:any?) %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+          <% end %>
+        <% else %>
+        <p>None!</p>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="span8">
+    <h3><%= @title %></h3>
+    <% if @feed_items.try(:any?) %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+    <% else %>
+    <p>None!</p>
+    <% end %>
+  </div>
+</div>

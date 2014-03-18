@@ -8,7 +8,9 @@
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
 
     <p class="location"><strong>Halifax, Nova Scotia, Canada</strong></p>
+    <%= render 'follow_form' if signed_in? %>
   </div>
+
 
 
   <div class="user-posts">
@@ -21,5 +23,6 @@
         <p> Someone's sleepy! Why don't you make a first post!</p>
       <% end %>
     </div>
+
   </div>
 
