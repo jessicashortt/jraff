@@ -13,15 +13,16 @@
 
     <header>
       <div class="persistent-header"> <!-- make the header a separate partial -->
-        <%= link_to "jraff.es", root_url, id: "logo" %>
+        <h1>jraff<span>.es</span></h1>
         <nav>
           <ul>
             <% if signed_in? %>
+              <li><%= link_to "Home", root_url %></li>
               <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
+              <li><%= link_to "Account", '#' %></li>
               <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
             <% else %>
-              <li><%= link_to "Home",    root_url %></li>
+              <li><%= link_to "Home",   root_url %></li>
               <li><%= link_to "About",   about_path %></li>
               <li><%= link_to "Help",    help_path %></li>
             <% end %>
@@ -31,7 +32,12 @@
     </header>
     
     <div class="container">
-      <%= yield %>
+      <% if signed_in? %>
+        <div class="">
+      <% else %>
+        <div class="home-not-signed-in">
+      <% end %>
+      <%= yield %></div>
     </div>
 
   </body>

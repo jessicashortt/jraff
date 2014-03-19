@@ -12,17 +12,18 @@
   <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
 <% else %>
-<h1>Welcome.</h1>
+<div class="signin-welcome-message">
+<h2>Welcome.</h2>
     <%= form_for(:session, url: sessions_path) do |f| %>
 
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    
+    <%= f.text_field :username, placeholder: "Username" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: "Password", class: "signin-password" %>
 
-    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    <%= f.submit "GO", class: "signin-submit" %>
   <% end %>
 
-  <%= link_to "Sign up now!", signup_path, class: "signup-button" %>
+  <div class="signin-registermsg">Don't have an account yet? <%= link_to "Register!", signup_path, class: "signup-button" %></div>
+</div>
 <% end %>
