@@ -5,9 +5,18 @@
     <h2><%= @user.full_name %></h2>
     <h3 class="user-info-username">@<%= @user.username %></h3>
     <!-- put actual description info here later -->
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation</p>
+    <p><%= @user.description if !blank? %></p>
 
-    <p class="location"><strong>Halifax, Nova Scotia, Canada</strong></p>
+    <p class="location"><strong><%= @user.location if !blank? %></strong></p>
+    <div class="user-stats">
+      <!-- Replace this with the stats partial -->
+      <p>
+        <span><b><%= @user.followed_users.count %></b> <br>following </span>
+        <span><b><%= @user.followers.count %></b> <br>followers</span>
+        <span><b><%= @user.posts.count %></b> <br>posts</span>
+      </p>
+    </div>
+
     <%= render 'follow_form' if signed_in? %>
   </div>
 
@@ -15,7 +24,6 @@
 
   <div class="user-posts">
       <% if @user.posts.any? %>
-        <h3> posts (<%= @user.posts.count %>)</h3>
         <ul class="posts">
           <%= render @posts %>
         </ul>

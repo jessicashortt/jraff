@@ -32,10 +32,10 @@
     </header>
     
     <div class="container">
-      <% if signed_in? %>
-        <div class="">
-      <% else %>
+      <% if !signed_in? && current_page?(root_url) %>
         <div class="home-not-signed-in">
+      <% else %>
+        <div class="">
       <% end %>
       <%= yield %></div>
     </div>

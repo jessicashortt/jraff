@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to root_url
   end
 
   def create
@@ -7,10 +8,11 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Sign the user in and redirect to the user's show page.
       sign_in user
-      redirect_back_or user
+      redirect_back_or root_url
     else
-      flash.now[:error] = 'Invalid email/password combination'
-      render 'new'
+      flash.now[:notice] = 'Invalid email/password combination'
+      # render 'new'
+      redirect_to root_url
     end
     end
 

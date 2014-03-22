@@ -1,4 +1,6 @@
 <li>
+  <!-- <span class="avatar"></span><br> -->
+  <span class="poster"><strong><%= @user.full_name %></strong> &middot; @<%= @user.username %></span><br>
   <span class="content"><%= post.content %></span><br/>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.

@@ -1,10 +1,13 @@
-
+.container {
+  // max-width: 960px;
+  // margin: auto;
+}
 header {
   background: #4E4D4D;
   .persistent-header {
-    width: 960px;
+    max-width: 960px;
     margin: auto;
-    padding: 20px 10px;
+    padding: 25px 10px;
     
     h1 {
       color: white;

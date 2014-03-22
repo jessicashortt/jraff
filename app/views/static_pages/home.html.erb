@@ -1,7 +1,7 @@
 <% if signed_in? %>
-<section>
-        <%= render 'shared/stats' %>
-      </section>
+  <section>
+    <%= render 'shared/stats' %>
+  </section>
   <%= form_for(@post) do |f| %>
     <div class="field">
       <%= f.text_area :content, placeholder: "Compose new post..." %>
@@ -26,4 +26,6 @@
 
   <div class="signin-registermsg">Don't have an account yet? <%= link_to "Register!", signup_path, class: "signup-button" %></div>
 </div>
+
+
 <% end %>
