@@ -1,0 +1,51 @@
+*{
+  text-decoration: none;
+}
+
+// colours
+$giraffe: #E7BC73;
+$giraffe-spots: #BC8236;
+$giraffe-spotshover: #D99C4D;
+$blue: #78A7C9;
+$bluehover: #94C0E0;
+$lightgrey: #e0e0e0;
+$darkgrey: #888;
+$medgrey: #A8A8A8;
+$headerblack: #4E4D4D;
+
+
+// css rules
+$thinborder: 1px solid $lightgrey;
+li {
+  list-style: none;
+}
+
+
+//Fonts 
+$OpenSans: "Open Sans", sans-serif;
+$Muli: "Muli", sans-serif;
+
+
+// error boxes
+#error_explanation {
+    font-family: "Open Sans", sans-serif;
+    border: 2px solid #DD4D4D;
+    border-radius: 5px;
+    background: #DD9999;
+    font-size: 14px;
+    padding: 10px;
+    .field_with_errors {
+      background: none;
+    }
+    h2 {
+      background: none;
+      font-size: 16px;
+    }
+    ul {
+      padding: 0 10px 10px 0;
+      li {
+        list-style: none;
+        padding: 2px 20px;
+      }
+    }
+  }

@@ -7,6 +7,8 @@
       <%= csrf_meta_tags %>
 
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
 
   </head>
   <body>
@@ -18,26 +20,26 @@
           <ul>
             <% if signed_in? %>
               <li><%= link_to "Home", root_url %></li>
-              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to current_user.full_name.split(" ").first, current_user %></li>
               <li><%= link_to "Account", '#' %></li>
               <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
             <% else %>
-              <li><%= link_to "Home",   root_url %></li>
-              <li><%= link_to "About",   about_path %></li>
-              <li><%= link_to "Help",    help_path %></li>
+              <li><%= link_to  "Home",    root_url %></li>
+              <li><%= link_to  "About",   about_path %></li>
+              <li><%= link_to  "Help",    help_path %></li>
             <% end %>
           </ul>
         </nav>
       </div>
     </header>
     
-    <div class="container">
+    
       <% if !signed_in? && current_page?(root_url) %>
-        <div class="home-not-signed-in">
+        <div class="container-unsigned"><div class="home-not-signed-in"><%= yield %></div></div>
       <% else %>
-        <div class="">
+        <div class="container"><div class="wrapper"><%= yield %></div>
       <% end %>
-      <%= yield %></div>
+      
     </div>
 
   </body>

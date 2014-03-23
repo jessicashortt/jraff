@@ -1,14 +1,14 @@
 <li>
   <!-- <span class="avatar"></span><br> -->
-  <span class="poster"><strong><%= @user.full_name %></strong> &middot; @<%= @user.username %></span><br>
-  <span class="content"><%= post.content %></span><br/>
+  <span class="poster"><strong><%= @user.full_name %></strong> &middot; @<%= @user.username %></span>
+  <span class="delete-post">
+    <% if current_user?(post.user) %>
+      &middot; <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" },title: post.content %>
+    <% end %><br>
+  </span>
+  <span class="content"><%= post.content %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
+    <%= time_ago_in_words(post.created_at) %> ago
   </span>
 
-  <% if current_user?(post.user) %>
-    <%= link_to "delete", post, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: post.content %>
-  <% end %>
 </li>

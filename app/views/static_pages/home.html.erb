@@ -1,16 +1,25 @@
 <% if signed_in? %>
-  <section>
-    <%= render 'shared/stats' %>
-  </section>
-  <%= form_for(@post) do |f| %>
-    <div class="field">
-      <%= f.text_area :content, placeholder: "Compose new post..." %>
-    </div>
-    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-  <% end %>
+<div class="homepage-user-info">
+    <section>
+      <h3><%= @current_user.full_name %></h3>
+      <h4>@<%= @current_user.username %></h4>
+      <%= render 'shared/stats' %>
+    </section>
+    <%= form_for(@post) do |f| %>
+      <div class="field">
+        <%= f.text_area :content, placeholder: "Compose new post..." %>
+      </div>
+      <%= f.submit "Post", class: "homepage-submit" %>
+    <% end %>
+  </div>
 
-  <h3>Micropost Feed</h3>
-      <%= render 'shared/feed' %>
+  <div class="user-posts">
+    <h3>Posts</h3>
+        <%= render 'shared/feed' %>
+  </div>
+
+
+
 <% else %>
 <div class="signin-welcome-message">
 <h2>Welcome.</h2>

@@ -1,85 +1,66 @@
-// User show page
+// user show page
+@import 'melee';
+
+
 .user-profile {
-  font-family: "Open Sans", sans-serif;
-  padding: 50px;
-  .user-info {
-    width: 35%;
-    text-align: center;
-    float: left;
-    .image {
-      background: #e0e0e0;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin: 20px auto;
-    }
-    h2 {
-      font-size: 30px;
-      padding: 20px 0 10px 0;
-    }
-    h3 {
-      padding-bottom: 20px;
-    }
-    .user-info-username {
-        font-size: 20px;
-        font-weight: normal;
-        color: #BC8236;
-    }
-    p {
-      text-align: justify;
-      width: 70%;
-      margin: auto;
-    }
-    .location {
-      text-transform: uppercase;
-      text-align: center;
-      padding: 40px 0;
-    }
-  }
-  .user-posts {
-    overflow: hidden;
-    padding: 0 50px;
-    width: 50%;
-    li {
-      list-style: none;
-      padding: 20px 20px;
-      border-bottom: 1px solid #e0e0e0;
-      &:last-of-type {
-        border:none;
-      }
-      .timestamp {
-        color: #888;
-        padding: 10px 20px;
-
-      }
-      .content {
-        padding: 0 20px;
-      }
-    }
-  }
-
-  .user-stats {
-    font-family: "Open Sans", sans-serif;
-    width: 370px;
-    margin: auto;
-    p {
-      font-size: 14px;
-      span {
-        float: right;
-        padding: 10px;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 12px;
-        border-right: 1px solid #e5e5e5;
-        &:first-of-type {
-          border:none;
-        }
-        b {
-          font-size: 25px;
-          color: #BC8236;
-        }
-      }
-    }
-  }
-  
+  font-family: $OpenSans;
 }
+.user-info {
+  float: left;
+  width: 300px;
+  padding: 0 20px; 
+  .image {
+    width: 200px;
+    height: 200px;
+    background: #888;
+    border-radius: 50%;
+    margin: auto;
+  }
+  h2 {
+    padding: 30px 0 10px 0;
+    text-align: center;
+    font-size: 30px;
+  }
+  .user-info-username {
+    font-weight: 400;
+    color: $giraffe-spots;
+    text-align: center;
+    padding: 0 0 40px 0;
+  }
+  .description {
+    font-size: 14px;
+    text-align: justify;
+  }
+  .location {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px 0 0 0;  
+    font-weight: 400;
+
+  }
+
+  .follow-button {
+    position: relative;
+    top: -450px;
+    left: 45px;
+    border: none;
+    background: $blue;
+    color: white;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: top;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      background: $bluehover;
+    }
+  }
+}
+
+.new-user-message {
+  color: $medgrey;
+  font-size: 12px;
+}
+

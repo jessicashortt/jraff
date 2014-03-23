@@ -1,3 +1,38 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'melee';
+
+.user-posts {
+  overflow: hidden;
+  font-family: $OpenSans;
+  padding: 0 50px;
+  li {
+    margin: 0 0 40px 20px;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 0 0 10px 0;
+    margin: 0 0 20px 0;
+    border-bottom: $thinborder;
+  }
+  .content {
+    display: block;
+    padding: 10px 0;
+  }
+  .timestamp {
+    color: $darkgrey;
+    font-size: 14px;
+  }
+  .delete-post {
+    a {
+      color: $darkgrey;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+
+  .user-name a {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}

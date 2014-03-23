@@ -1,0 +1,47 @@
+// home page
+@import 'melee';
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    .wrapper {
+      padding: 70px 0;
+    }
+}
+
+.homepage-user-info {
+  font-family: $OpenSans;
+  float: left;
+  padding: 0 50px 0 0;
+
+  h3 {
+    font-size: 25px;
+    text-align: center;
+  }
+  h4 {  
+    font-weight: 400;
+    text-align: center;
+  }
+  textarea {
+    resize: none;
+    height: 75px;
+    margin: auto;
+    outline: none;
+    padding: 10px;
+    margin: 50px 0 0 0;
+    font-size: 13px;
+    width: 250px;
+  }
+  .homepage-submit {
+    border: none;
+    padding: 10px;
+    width: 75px;
+    float: right;
+    color: white;
+    background: $giraffe-spots;
+    &:hover {
+      background: $giraffe-spotshover;
+      cursor: pointer;
+    }
+  }
+}

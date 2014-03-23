@@ -25,4 +25,7 @@ Jraff::Application.routes.draw do
 
 
   # Vanity URLs. Make sure at the bottom of this file.
+  get '/users' => 'users#home', as: :user_home
+  
+  
 end

@@ -1,17 +1,15 @@
-.container {
-  // max-width: 960px;
-  // margin: auto;
-}
+@import 'melee';
+
 header {
   background: #4E4D4D;
   .persistent-header {
     max-width: 960px;
     margin: auto;
-    padding: 25px 10px;
+    padding: 15px 10px;
     
     h1 {
       color: white;
-      font-family: "Open Sans";
+      font-family: $OpenSans;
       font-weight: 400;
       font-size: 40px;
       letter-spacing: 2px;
@@ -23,16 +21,18 @@ header {
 
     ul {
       list-style: none;
+      letter-spacing: 1px;
       float: right;
       font-size: 14px;
       text-transform: uppercase;
       position: relative;
-      top: -5px;
+      top: -25px;
       li {
         display: inline-block;
         padding: 0 15px;
         a:link,
         a:visited {
+          font-family: $OpenSans;
           color: white;
           text-decoration: none;
         }

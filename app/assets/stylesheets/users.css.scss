@@ -1,0 +1,22 @@
+@import 'melee';
+
+.user-stats {
+    // width: 300px;
+    margin: auto;
+    padding: 50px 0;
+    span {
+      float: left;
+      margin: 10px 0;
+      padding: 0 10px;
+      text-align: center;
+      width: 70px;
+      border-right: $thinborder;
+      &:last-of-type {
+        border: none;
+      }
+      b {
+        font-size: 25px;
+        color: $giraffe-spots;
+      }
+    }
+  }

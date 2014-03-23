@@ -1,10 +1,20 @@
+//user signin-page
+@import 'melee';
+
+.container-unsigned {
+  background: $blue;
+  width: 100%;
+}
+
 .home-not-signed-in {
-  height: 725px;
-  background: #78A7C9 url('http://jraff.es/images/jraff.png') no-repeat 150px 50px;
+  max-width: 960px;
+  margin: auto;
+  height: 690px;
+  background: url('http://i.imgur.com/yHancIo.png') no-repeat 50px 50px;
   font-family: "Open Sans", sans-serif;
   .signin-welcome-message {
     float: right;
-    padding: 150px 250px 100px 50px;
+    padding: 150px 0px 50px 50px;
     h2 {
       color: white;
       padding: 0 0 50px 0;
@@ -13,7 +23,6 @@
       letter-spacing: 2px;
     }
     form {
-      
       input {
         display: block;
         padding: 20px;
@@ -40,6 +49,7 @@
         font-weight: bold;
         &:hover {
          background: #5B5B5B;
+         cursor: pointer;
         }
       }
     }
@@ -47,7 +57,7 @@
       clear: both;
     }
     .signin-registermsg {
-      padding: 50px 0 0 5px;
+      padding: 50px 0 0 50px;
       letter-spacing: 1px;
       font-size: 14px;
       a:hover {
@@ -55,4 +65,51 @@
       }
     }
   }
+}
+
+.registration {
+  background: #78A7C9;
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-family: $OpenSans;
+  padding: 20px;
+
+  h2 {
+    color: white;
+    font-weight: 400;
+  }
+  .new-user {
+    margin: auto;
+    width: 400px;
+  }
+  form {
+    margin: 50px;
+    input {
+      display: block;
+      padding: 10px;
+      border: none;
+      font-size: 14px;
+      border-radius: 5px;
+      width: 350px;
+      margin: 10px;
+      &[type=text] {
+        width: 350px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .submit-button input {
+    margin-top: 20px;
+    color: white;
+    width: 370px;
+    background: $giraffe;
+    &:hover {
+      cursor: pointer;
+      background: $giraffe;
+    }
+  }
+  
 }
